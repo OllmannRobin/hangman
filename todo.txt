@@ -1,0 +1,5 @@
+Gerer le unable après appui sur le boutton LETTRE
+Gerer le nombre d'erreur pour afficher le dessin correspondant
+Initialisation genérale de toutes les valeur dans une fonction ? 
+condition de victoire et de défaite
+refonte graphique :/
