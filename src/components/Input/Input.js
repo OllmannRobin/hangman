@@ -13,8 +13,8 @@ const Input = ({
   const cryptWord = (word) => {
     const newArray = [];
     if (word) {
-      [...word].map(() => {
-        newArray.push("_");
+      [...word].map((item) => {
+        return newArray.push("_");
       });
     }
     setMaskArray(newArray);

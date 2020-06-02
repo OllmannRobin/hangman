@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Box, Button } from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
 import Header from "../Header/Header";
 import Input from "../Input/Input";
 import HangedPicture from "../HangedPicture/HangedPicture";
@@ -88,7 +88,10 @@ const Main = () => {
           </Box>
         )}
         {fail && (
-          <Box m={2}>Vous avez perdu le mot a trouver était {word} .</Box>
+          <Box m={2}>
+            <HangedPicture nbError={nbError} />
+            Vous avez perdu le mot a trouver était {word} .
+          </Box>
         )}
         {win || fail ? (
           <Button
