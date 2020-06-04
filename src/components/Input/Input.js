@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Box, Button, TextField } from "@material-ui/core";
 
 const Input = ({
@@ -21,12 +21,14 @@ const Input = ({
   };
   const handleForm = (e) => {
     e.preventDefault();
-    setWord(
-      wordType
-        .toUpperCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-    );
+    wordType = wordType
+      .toUpperCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\d/g, "")
+      .replace(/\s/g, "");
+
+    setWord(wordType);
     setClue(clueType);
     setWordType("");
     setClueType("");

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box } from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
 const HelpButton = ({ setNbError, nbError, clue }) => {
   const helpClick = () => {
     setNbError(nbError + 1);
@@ -10,15 +10,22 @@ const HelpButton = ({ setNbError, nbError, clue }) => {
   const [showCLue, setShowClue] = useState(false);
   return (
     <Box m={1}>
-      <button className='clue-button'
-        variant="contained"
-        color="secondary"
-        onClick={() => helpClick()}
-        value="indice"
-        disabled={enable}
-      >
-        {showCLue ? clue : "Un indice ?"}
-      </button>
+      {clue ? (
+        <button
+          className="clue-button"
+          variant="contained"
+          color="secondary"
+          onClick={() => helpClick()}
+          value="indice"
+          disabled={enable}
+        >
+          {showCLue ? clue : "Un indice ?"}
+        </button>
+      ) : (
+        <Button variant="contained" disabled>
+          Pas d'indice 😣
+        </Button>
+      )}
     </Box>
   );
 };
