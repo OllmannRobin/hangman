@@ -12,17 +12,18 @@ const GuessWord = ({
   setFail,
   win,
 }) => {
-  const compareLetter = (val1, val2) => {
-    if (val1 === val2) {
-      return true;
-    } else return false;
-  };
   return (
     <Container>
       <Box>
         {[...word].map((letter, indexLetter) => {
-          if (compareLetter(proposalLetter, word[indexLetter])) {
+          if (proposalLetter === word[indexLetter]) {
             maskArray[indexLetter] = letter;
+          }
+          if (maskArray.indexOf("_") === -1) {
+            setWin(true);
+          }
+          if (nbError === 7) {
+            setFail(true);
           }
           return (
             <span key={indexLetter} className="crypted-word">
@@ -30,8 +31,6 @@ const GuessWord = ({
             </span>
           );
         })}
-        {maskArray.indexOf("_") === -1 && setWin(true)}
-        {nbError === 7 && setFail(true)}
       </Box>
       {win !== true && (
         <HelpButton setNbError={setNbError} nbError={nbError} clue={clue} />

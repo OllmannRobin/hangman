@@ -4,7 +4,6 @@ import { Container } from "@material-ui/core";
 const Letters = ({ setProposalLetter, word, nbError, setNbError }) => {
   /* Method for manage letter proposal, if it match or not */
   const proposal = (e) => {
-    console.log(e.currentTarget.value);
     if (word) {
       if (word.indexOf(e.currentTarget.value) === -1) {
         setNbError(nbError + 1);

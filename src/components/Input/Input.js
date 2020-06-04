@@ -38,7 +38,8 @@ const Input = ({
         <TextField
           m={2}
           label="Le mot à deviner"
-          type="text"
+          type="password"
+          autoComplete="off"
           size="small"
           value={wordType}
           onChange={(e) => setWordType(e.target.value)}
@@ -48,7 +49,8 @@ const Input = ({
       <Box m={2}>
         <TextField
           label="Donner un indice ?"
-          type="text"
+          type="password"
+          autoComplete="off"
           size="small"
           value={clueType}
           onChange={(e) => setClueType(e.target.value)}

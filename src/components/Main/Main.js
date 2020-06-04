@@ -52,7 +52,7 @@ const Main = () => {
             setMaskArray={setMaskArray}
           />
         )}
-        {word !== "" && fail !== true && (
+        {word && fail !== true && (
           <>
             <HangedPicture nbError={nbError} />
             <GuessWord
@@ -66,6 +66,7 @@ const Main = () => {
               setFail={setFail}
               win={win}
             />
+
             {win !== true && (
               <Letters
                 setProposalLetter={setProposalLetter}
